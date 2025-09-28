@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juicyyaap – JUICYYAAP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Feather Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #222222;
+            background-color: #FAFAF7;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #A6B4A1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+    
+    <!-- Initialize Feather Icons -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            feather.replace();
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-offwhite/95 backdrop-blur-sm py-5 px-6 md:px-12 border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold tracking-tight">juicyyaap</a>
+            <div class="hidden md:flex space-x-12">
+                <a href="index.html" class="nav-link text-sm uppercase tracking-wider">Home</a>
+                <a href="index.html#work" class="nav-link text-sm uppercase tracking-wider">Portfolio</a>
+                <a href="index.html#about" class="nav-link text-sm uppercase tracking-wider">About</a>
+                <a href="index.html#contact" class="nav-link text-sm uppercase tracking-wider">Contact</a>
+            </div>
+            <!-- Custom hamburger menu icon -->
+            <button class="md:hidden group">
+                <div class="w-6 h-5 flex flex-col justify-between items-end">
+                    <span class="block w-6 h-0.5 bg-charcoal transition-all duration-300 group-hover:bg-sage"></span>
+                    <span class="block w-5 h-0.5 bg-charcoal transition-all duration-300 delay-100 group-hover:bg-sage"></span>
+                    <span class="block w-4 h-0.5 bg-charcoal transition-all duration-300 delay-200 group-hover:bg-sage"></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="py-32">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-8">
+                    <a href="portfolio.html" class="inline-flex items-center text-sm text-gray-700 hover:text-sage transition-colors">
+                        <i data-feather="arrow-left" class="w-4 h-4 mr-2"></i>
+                        Back to Portfolio
+                    </a>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Juicyyaap</h1>
+                <p class="text-xl text-gray-700 mb-8">Award-winning Social Media Director specializing in food and lifestyle brands, with proven results growing audiences and engagement.</p>
+                <div class="grid md:grid-cols-3 gap-8 border-t border-gray-200 pt-8">
+                    <div>
+                        <h3 class="text-sm uppercase tracking-wider text-gray-500 mb-2">Timeline</h3>
+                        <p>Ongoing since 2019</p>
+                    </div>
+                    <div>
+                        <h3 class="text-sm uppercase tracking-wider text-gray-500 mb-2">Services</h3>
+                        <ul class="space-y-1">
+                            <li>Content Strategy</li>
+                            <li>Creative Direction</li>
+                            <li>Photography & Styling</li>
+                            <li>Copywriting</li>
+                            <li>Community Management</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm uppercase tracking-wider text-gray-500 mb-2">Results</h3>
+                        <ul class="space-y-1">
+                            <li>100k+ Instagram Followers</li>
+                            <li>300% Engagement Growth</li>
+                            <li>Featured in Food Publications</li>
+                            <li>Brand Partnerships</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work -->
+    <section class="py-24">
+        <style>
+            /* Instagram portrait video size (9:16 aspect ratio) */
+            .instagram-portrait {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 9/16;
+                background-color: black;
+            }
+            .instagram-portrait video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            /* Grid container for side-by-side videos */
+            .videos-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+                width: 100%;
+            }
+            @media (max-width: 1024px) {
+                .videos-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            @media (max-width: 768px) {
+                .videos-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Initialize videos when the page loads
+                const videos = document.querySelectorAll('video');
+                videos.forEach(video => {
+                    // Try to load the video
+                    video.load();
+                    
+                    // Add event listener to handle when video can play
+                    video.addEventListener('canplay', function() {
+                        // Video is ready to play
+                        console.log('Video ready to play: ' + this.src);
+                    });
+                    
+                    // Add event listener to handle errors
+                    video.addEventListener('error', function() {
+                        console.error('Error loading video: ' + this.src);
+                        console.error('Error code: ' + this.error.code);
+                    });
+                });
+            });
+        </script>
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center">Featured Social Media Posts</h2>
+                
+                <!-- Side-by-Side Videos Grid -->
+                <div class="videos-grid">
+                
+                <!-- Instagram Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:translate-y-[-8px] transition-all duration-300">
+                    <div class="instagram-portrait">
+                        <video src="assets/jj1.MP4" alt="Juicyyaap Instagram Portrait Video" class="w-full h-full object-cover" controls muted playsinline loop preload="auto"></video>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="assets/nyaw.JPG" alt="Juicyyaap Logo" class="w-10 h-10 rounded-full object-cover mr-3 shadow-sm transition-all duration-500 hover:scale-105 hover:shadow">
+                            <div>
+                                <h4 class="font-medium">@juicyyaap</h4>
+                                <p class="text-sm text-gray-500">2 hours ago</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">New menu items dropping this weekend! 🍹 Come try our signature cocktails and small plates. Tag a friend who needs to try these! #NewMenu #WeekendVibes</p>
+                        <div class="flex items-center justify-between text-gray-500 text-sm">
+                            <div class="flex items-center space-x-4">
+                                <span class="flex items-center"><i data-feather="heart" class="w-4 h-4 mr-1"></i> 284</span>
+                                <span class="flex items-center"><i data-feather="message-circle" class="w-4 h-4 mr-1"></i> 32</span>
+                                <span class="flex items-center"><i data-feather="share-2" class="w-4 h-4 mr-1"></i> 8</span>
+                            </div>
+                            <span class="flex items-center"><i data-feather="bookmark" class="w-4 h-4"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:translate-y-[-8px] transition-all duration-300">
+                    <div class="instagram-portrait">
+                        <video src="assets/jj2.MP4" alt="Juicyyaap Instagram Portrait Video" class="w-full h-full object-cover" controls muted playsinline loop preload="auto"></video>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="assets/nyaw.JPG" alt="Juicyyaap Logo" class="w-10 h-10 rounded-full object-cover mr-3 shadow-sm transition-all duration-500 hover:scale-105 hover:shadow">
+                            <div>
+                                <h4 class="font-medium">@juicyyaap</h4>
+                                <p class="text-sm text-gray-500">1 day ago</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">Behind the scenes with our mixologist creating something special for tonight's event. 🌟 #CocktailArt #BehindTheScenes</p>
+                        <div class="flex items-center justify-between text-gray-500 text-sm">
+                            <div class="flex items-center space-x-4">
+                                <span class="flex items-center"><i data-feather="heart" class="w-4 h-4 mr-1"></i> 412</span>
+                                <span class="flex items-center"><i data-feather="message-circle" class="w-4 h-4 mr-1"></i> 47</span>
+                                <span class="flex items-center"><i data-feather="share-2" class="w-4 h-4 mr-1"></i> 12</span>
+                            </div>
+                            <span class="flex items-center"><i data-feather="bookmark" class="w-4 h-4"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform hover:translate-y-[-8px] transition-all duration-300">
+                    <div class="instagram-portrait">
+                        <video src="assets/jj3.MP4" alt="Juicyyaap Instagram Portrait Video" class="w-full h-full object-cover" controls muted playsinline loop preload="auto"></video>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center mb-3">
+                            <img src="assets/nyaw.JPG" alt="Juicyyaap Logo" class="w-10 h-10 rounded-full object-cover mr-3 shadow-sm transition-all duration-500 hover:scale-105 hover:shadow">
+                            <div>
+                                <h4 class="font-medium">@juicyyaap</h4>
+                                <p class="text-sm text-gray-500">3 days ago</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-4">Thank you to everyone who came out to our anniversary party! We had an amazing time celebrating with all of you. 🎉 #Anniversary #ThankYou</p>
+                        <div class="flex items-center justify-between text-gray-500 text-sm">
+                            <div class="flex items-center space-x-4">
+                                <span class="flex items-center"><i data-feather="heart" class="w-4 h-4 mr-1"></i> 568</span>
+                                <span class="flex items-center"><i data-feather="message-circle" class="w-4 h-4 mr-1"></i> 73</span>
+                                <span class="flex items-center"><i data-feather="share-2" class="w-4 h-4 mr-1"></i> 19</span>
+                            </div>
+                            <span class="flex items-center"><i data-feather="bookmark" class="w-4 h-4"></i></span>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-block px-8 py-3 border border-gray-900 text-gray-900 hover:border-sage hover:text-sage transition-colors">View More Posts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Results & Impact -->
+    <section class="py-24 bg-sage bg-opacity-10">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center">Results & Impact</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">100k+</div>
+                        <p class="text-gray-700">Instagram Followers</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">300%</div>
+                        <p class="text-gray-700">Engagement Growth</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">50k+</div>
+                        <p class="text-gray-700">Monthly Impressions</p>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="text-6xl text-sage opacity-30 mb-6"><i data-feather="quote-left" class="w-16 h-16"></i></div>
+                <p class="text-xl md:text-2xl font-light italic mb-8">"Working with JUICYYAAP as our Social Media Director has been transformative for our brand. Their strategic approach, creative vision, and deep understanding of platform algorithms have helped us build an authentic community and drive measurable business results."</p>
+                <div class="flex items-center justify-center">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="assets/otp.JPG" alt="Client" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-left">
+                        <h4 class="font-bold">Sarah Johnson</h4>
+                        <p class="text-gray-700">Owner, On The Pass</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Grow Your Brand's Social Media Presence?</h2>
+                <p class="text-lg text-gray-300 mb-8">Leverage my proven expertise growing @juicyyaap to 100k+ followers and transforming On The Pass's social media strategy. I'll help you develop a customized plan that drives engagement, builds community, and achieves your business objectives.</p>
+                <a href="contact.html" class="inline-block px-8 py-3 bg-sage text-white hover:bg-opacity-90 transition-colors">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-gray-100">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <a href="index.html" class="text-xl font-bold tracking-tight">juicyyaap</a>
+                    <p class="mt-2 text-gray-600">Social Media Director & Creative Strategist</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="https://www.instagram.com/juicyyyap/" class="text-gray-700 hover:text-sage transition-colors" aria-label="Instagram">
+                        <i data-feather="instagram" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-100 text-center text-gray-600 text-sm">
+                <p>&copy; 2023 juicyyaap. All rights reserved.</p>
+                <p class="mt-2">Built by <a href="https://thefreewebsitewizards.com/?fbclid=PAZXh0bgNhZW0CMTEAAad0Jm-GNlXnPPJ1LVG1DBVBoUGdRHC5m3FFwUqGHjUfujAnDPDhsINN8mAv1A_aem_owWh2qpkEErFPYCqV9cPEg" class="text-sage hover:underline" target="_blank" rel="noopener noreferrer">The Free Website Wizards</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            feather.replace();
+        });
+    </script>
+</body>
+</html>

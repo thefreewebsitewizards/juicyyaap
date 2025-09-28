@@ -1,0 +1,32 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+body {
+    background-color: #FAFAF7;
+    color: #222222;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+/* Utility Classes */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
+
+/* Tailwind Configuration is in the HTML head */
+/* Additional Utility Classes */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
