@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>juicyyaap – Social Media Director</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #222222;
+            background-color: #FAFAF7;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #A6B4A1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-offwhite/95 backdrop-blur-sm py-5 px-6 md:px-12 border-b border-gray-100">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold tracking-tight">juicyyaap</a>
+            <div class="hidden md:flex space-x-12">
+                <a href="index.html" class="nav-link text-sm uppercase tracking-wider text-sage">Home</a>
+                <a href="#work" class="nav-link text-sm uppercase tracking-wider">Portfolio</a>
+                <a href="#about" class="nav-link text-sm uppercase tracking-wider">About</a>
+                <a href="#contact" class="nav-link text-sm uppercase tracking-wider">Contact</a>
+            </div>
+            <!-- Custom hamburger menu icon -->
+            <button class="md:hidden group">
+                <div class="w-6 h-5 flex flex-col justify-between items-end">
+                    <span class="block w-6 h-0.5 bg-charcoal transition-all duration-300 group-hover:bg-sage"></span>
+                    <span class="block w-5 h-0.5 bg-charcoal transition-all duration-300 delay-100 group-hover:bg-sage"></span>
+                    <span class="block w-4 h-0.5 bg-charcoal transition-all duration-300 delay-200 group-hover:bg-sage"></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6">juicyyaap</h1>
+                    <h2 class="text-2xl md:text-3xl font-heading mb-8">Social Media Director</h2>
+                    <p class="text-lg mb-8 max-w-lg">Creative strategy & direction for brands and culture.</p>
+                    <a href="#work" class="inline-block border-b-2 border-charcoal pb-1 hover:text-sage hover:border-sage transition-colors">View My Work</a>
+                </div>
+                <div class="fade-in">
+                    <img src="assets/nyaw.JPG" alt="juicyyaap" class="w-full max-w-xl mx-auto object-cover rounded-lg shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="fade-in">
+                <p class="text-xl mb-6">Hi, I'm JUICYYAAP. I specialize in crafting compelling social media narratives that connect brands with their audiences through authentic storytelling and strategic content direction.</p>
+                <p class="text-xl">With experience directing social strategy for lifestyle and culinary brands, I bridge creative vision with platform-specific execution to drive engagement and growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="work" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-heading font-bold mb-16 text-center fade-in">Featured Projects</h2>
+            
+            <!-- Projects Grid -->
+            <div class="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+                <!-- Juicyyaap Project -->
+                <div class="flex-1">
+                    <a href="juicyyaap.html" class="group block fade-in h-full">
+                        <div class="overflow-hidden mb-6 aspect-video bg-gray-100">
+                            <video class="w-full h-full object-cover hover-scale transition-transform duration-500" autoplay muted loop playsinline>
+                                <source src="assets/jj1.MP4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-end justify-between">
+                            <div>
+                                <h3 class="text-3xl font-heading group-hover:text-sage transition-colors mb-2">Juicyyaap</h3>
+                                <p class="text-lg text-gray-700 max-w-xl">Award-winning Social Media Director specializing in food and lifestyle brands, with proven results growing audiences and engagement.</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Content Strategy</span>
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Creative Direction</span>
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Photography</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- On The Pass Project -->
+                <div class="flex-1">
+                    <a href="onthepass.html" class="group block fade-in h-full">
+                        <div class="overflow-hidden mb-6 aspect-video bg-gray-100">
+                            <video class="w-full h-full object-cover hover-scale transition-transform duration-500" autoplay muted loop playsinline>
+                                <source src="assets/jvid1.MP4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-end justify-between">
+                            <div>
+                                <h3 class="text-3xl font-heading group-hover:text-sage transition-colors mb-2">On The Pass</h3>
+                                <p class="text-lg text-gray-700 max-w-xl">Social Media Strategy & Content Direction for a dynamic hospitality brand, driving significant growth in followers and engagement.</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Video Production</span>
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Influencer Collaboration</span>
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Analytics</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <div class="fade-in">
+                <p class="text-xl mb-6">Hi, I'm JUICYYAAP. I specialize in crafting compelling social media narratives that connect brands with their audiences through authentic storytelling and strategic content direction.</p>
+                <p class="text-xl">With experience directing social strategy for lifestyle and culinary brands, I bridge creative vision with platform-specific execution to drive engagement and growth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="work" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-heading font-bold mb-16 text-center fade-in">Featured Projects</h2>
+            
+            <!-- Projects Grid -->
+            <div class="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+                <!-- Juicyyaap Project -->
+                <div class="flex-1">
+                    <a href="juicyyaap.html" class="group block fade-in h-full">
+                        <div class="overflow-hidden mb-6 aspect-video bg-gray-100">
+                            <video class="w-full h-full object-cover hover-scale transition-transform duration-500" autoplay muted loop playsinline>
+                                <source src="assets/jj1.MP4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-end justify-between">
+                            <div>
+                                <h3 class="text-3xl font-heading group-hover:text-sage transition-colors mb-2">Juicyyaap</h3>
+                                <p class="text-lg text-gray-700 max-w-xl">Award-winning Social Media Director specializing in food and lifestyle brands, with proven results growing audiences and engagement.</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Content Strategy</span>
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Creative Direction</span>
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Photography</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- On The Pass Project -->
+                <div class="flex-1">
+                    <a href="onthepass.html" class="group block fade-in h-full">
+                        <div class="overflow-hidden mb-6 aspect-video bg-gray-100">
+                            <video class="w-full h-full object-cover hover-scale transition-transform duration-500" autoplay muted loop playsinline>
+                                <source src="assets/jvid1.MP4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-end justify-between">
+                            <div>
+                                <h3 class="text-3xl font-heading group-hover:text-sage transition-colors mb-2">On The Pass</h3>
+                                <p class="text-lg text-gray-700 max-w-xl">Social Media Strategy & Content Direction for a dynamic hospitality brand, driving significant growth in followers and engagement.</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Video Production</span>
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Influencer Collaboration</span>
+                                <span class="px-3 py-1 bg-sage bg-opacity-10 text-sm rounded-full">Analytics</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA Section -->
+    <section id="contact" class="py-20 px-6 bg-peach">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-heading font-bold mb-6 fade-in">Let's Work Together</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto fade-in">Interested in collaborating? Reach out to discuss your next project.</p>
+            <a href="contact.html" class="inline-block border-b-2 border-charcoal pb-1 hover:text-sage hover:border-sage transition-colors fade-in">Get in Touch</a>
+            <div class="flex justify-center space-x-6 mt-8 fade-in">
+                <a href="https://www.instagram.com/juicyyaap/" class="hover:text-sage transition-colors" target="_blank"><i data-feather="instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-gray-100">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <a href="index.html" class="text-xl font-bold tracking-tight">juicyyaap</a>
+                    <p class="mt-2 text-gray-600">Social Media Director & Creative Strategist</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="https://www.instagram.com/juicyyyap/" class="text-gray-700 hover:text-sage transition-colors" aria-label="Instagram">
+                        <i data-feather="instagram" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-100 text-center text-gray-600 text-sm">
+                <p>&copy; 2023 juicyyaap. All rights reserved.</p>
+                <p class="mt-2">Built by <a href="https://thefreewebsitewizards.com/?fbclid=PAZXh0bgNhZW0CMTEAAad0Jm-GNlXnPPJ1LVG1DBVBoUGdRHC5m3FFwUqGHjUfujAnDPDhsINN8mAv1A_aem_owWh2qpkEErFPYCqV9cPEg" class="text-sage hover:underline" target="_blank" rel="noopener noreferrer">The Free Website Wizards</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="script.js"></script>
+</body>
+</html>
