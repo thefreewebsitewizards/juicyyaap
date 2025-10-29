@@ -1,11 +1,12 @@
+// Scoped script to avoid global redeclaration conflicts
+(function() {
 // Initialize Feather Icons
 feather.replace();
 
 // Fade in elements on scroll
-const fadeElements = document.querySelectorAll('.fade-in');
-
 const fadeInOnScroll = () => {
-    fadeElements.forEach(element => {
+    const els = document.querySelectorAll('.fade-in');
+    els.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         
@@ -230,3 +231,4 @@ window.addEventListener('load', () => {
     setupMobileMenu();
 });
 window.addEventListener('scroll', fadeInOnScroll);
+})();
